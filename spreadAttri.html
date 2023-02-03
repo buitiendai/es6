@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sử dụng Spread Attributes trong ES6</title>
+</head>
+<body>
+    <script>
+        let greetings = "lazy dog humps over brown fox";
+        let chars = [...greetings];
+        console.log(chars.length);
+
+        let blog1Subcribers = ['billy@example.com', 'sally@gmail.com'];
+        let blog2Subcribers = ['timmy@gmail.com', 'tammy@example.com', 'tommy@yahoo.com'];
+        let subcribers = [...blog1Subcribers, ...blog2Subcribers];
+        console.log(subcribers);
+
+        const billing = {billingContact: '0988666999', billingAddress: '74 Hồ Đền Lừ, Hoàng Mai, Hà Nội'};
+        const shipping = {shippingContact: '0986888999', shippingAddress: 'CT11, KĐT Hồng Hà Ecocity, Thanh Trì, Hà Nội'};
+        const infoShip = {...billing, ...shipping};
+        console.log(infoShip);
+
+        let students = ['John', 'Sofia', 'Bob'];
+        let copy_students = students;
+        console.log(copy_students);
+        students.push('Sally');
+        console.log(copy_students);
+    </script>
+</body>
+</html>

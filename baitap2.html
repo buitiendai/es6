@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sử dụng Set</title>
+</head>
+<body>
+    <script>
+
+        const myZoo = ['Tiger', 'Zebra', 'Monkey', 'Lion', 'Horse'];
+        const mySet = new Set(myZoo);
+
+        // in ra các con vật có trong sở thú
+        console.log(mySet); 
+        // Thêm một loài vật mới vào danh sách
+        mySet.add('Birds');
+        console.log(mySet);
+        // Xóa một loài vật có trong danh sách
+        mySet.delete('Lion');
+        console.log(mySet);
+        // Kiểm tra xem một loài vật có trong danh sách không
+        // console.log(mySet.has('Panda')) => false;
+        if(mySet.has('Panda')) {
+            console.log('Có Panda');
+        }else {
+            console.log("Không có Panda");
+        }
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //Một tham số 1 câu lệnh
+        let greet = name => console.log("Xin chào " + name + "!");
+        greet("NewwayPMS");
+        //Nhiều tham số 1 câu lệnh
+        let multiply = (x, y) => x*y;
+        console.log(multiply(3,5));
+        //Một tham số nhiều câu lệnh
+        let checkAge = age => {
+            if(age > 15) {
+                console.log("Đã có CCCD");
+            }else {
+                console.log("Chưa có CCCD");
+            }
+        }
+        checkAge(16);
+        //Nhiều tham số nhiều câu lệnh
+        let divide = (x, y) => {
+            if(y !== 0) {
+                return x/y;
+            }
+        }
+        console.log(divide(5,8));
+        //Không tham số 1 câu lệnh
+        let hello = () => console.log("Xin chào NewwayPMS");
+        hello();
+
+        //This
+        function Person(fullName, age) {
+            this.fullName = fullName;
+            this.age = age;
+
+            this.getInfo = function() {
+                return () => {
+                    console.log(this.constructor.name); //This đề cập tới đối tượng Person
+                    console.log(`Tôi là ${this.fullName}. ${this.age} tuổi`);
+                }
+            }
+        }
+        let p = new Person('Nhật Minh', 16);
+        let printInfo = p.getInfo();
+        printInfo();
+
+        //Giá trị mặc định của tham số
+        function multiplies(a, b=1) {
+            return a*b;
+        }
+        console.log(multiplies(5, 3));
+        console.log(multiplies(4));
+        console.log(multiplies(6, undefined));
+
+        function greeting(name, hello, message = hello + ' ' + name) {
+            return [name, hello, message];
+        }
+        console.log(greeting('Bùi Tiến Đại', 'Hi'));
+        console.log(greeting('Mai Thi Thu Trang', 'Hello', 'Happy birthday'));
+        //Sử dụng for .. of ..
+        const team = [
+            {member: 'John', km: 3},
+            {member: 'Peter', km: 4},
+            {member: 'David', km: 5},
+            {member: 'Kenny', km: 6},
+        ]
+        let sum = 0;
+        // for(const {km} of team) {
+        //     sum += km;
+        // }
+
+        for(let {km} of team) {
+            sum += km;
+        }
+        console.log(`Tổng số km team đã chạy là: ${sum}`);
+    </script>
+</body>
+</html>

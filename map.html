@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const numbers = [68, 54, 27, 13];
+        const newArr = numbers.map(myFunction);
+
+        function myFunction(num) {
+            return num*10;
+        }
+        console.log(newArr);
+
+        const persons = [
+            {firstName: "Bui Tien", lastName: "Dai"},
+            {firstName: "Bui Nhat", lastName: "Bong"},
+            {firstName: "Bui Mai", lastName: "Tuti"},
+        ];
+        const newPersons = persons.map(getFullName);
+        function getFullName(item) {
+            return [item.firstName, item.lastName].join(" ");
+        }
+        console.log(newPersons);
+
+        // Bài tập
+        const birds = [
+        {ID: "DV8", Name: "Eurasian Collared-Dove", Type: "Dove" },
+        {ID: "HK12", Name: "Bald Eagle", Type: "Hawk" },
+        {ID: "HK6", Name: "Cooper's Hawk", Type: "Hawk" },
+        {ID: "SP11", Name: "Bell's Sparrow", Type: "Sparrow" },
+        {ID: "DV2", Name: "Mourning Dove", Type: "Dove" }
+        ];
+        birds.forEach(bird => console.log(bird.ID));
+
+        // Sử dụng map để lấy ra danh sách
+        console.log(birds.map(bird =>bird.ID));
+
+        // Lấy ra những mã có chữ cái đầu là D
+        console.log(birds.filter(bird => {
+            if(bird.ID[0] === 'D') {
+                return bird.ID;
+            }
+        }));
+    </script>
+</body>
+</html>

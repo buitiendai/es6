@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const a = ['a', 'b', 'c'];
+        //cách 1: sử dụng for .. of
+        for (let item of a) {
+            console.log(item);
+        }
+        //cách 2 sử dụng for thông thường
+        for(let i = 0; i<a.length; i++) {
+            console.log(a[i]);
+        }
+        //cách 3: lambda expression
+        a.forEach(item => console.lgo("Item " + item));
+
+
+        // Bài lấy số chẵn
+        const getEvens = [1,2,3,4,5,6];
+        getEvens.forEach(item => {
+            if(item % 2 === 0) {
+                console.log(item);
+            }
+        });
+
+        // sử dụng map thì dùng return, không dùng consolog
+        // map tạo ra một mảng mới với tiêu chí nào đó với số lượng phần tử giống với mảng gốc.
+
+
+    </script>
+</body>
+</html>

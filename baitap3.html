@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sử dụng Static trong ES6</title>
+</head>
+<body>
+    <script>
+
+        //Câu 1
+        class Info {
+            constructor(name, description, value) {
+                this.name = name;
+                this.description = description;
+                this.value = value;
+            }
+            calculator() {
+                return this.value*3;
+            }
+        }
+
+        let result = new Info("Đơn giá", "Số lượng", 1000);
+        console.log(result.calculator());
+
+        //Câu 2
+        class Rectangle {
+            constructor(width, height, description) {
+                this.width = width;
+                this.height = height;
+                this.description = description;
+            }
+
+            set newWidth(newWidth) {
+                this.width = newWidth;
+            }
+
+            set newHeight(newHeight) {
+                this.height = newHeight;
+            }
+            
+            get newDescription() {
+                return this.description;
+            }
+            
+        }
+
+        class NewRectangle extends Rectangle {
+            constructor(width, height, description) {
+                super(width, height, description)
+            }
+
+            newCalculator() {
+                return this.width*this.height;
+            }
+        }
+
+        let area = new NewRectangle(8, 6, "Red");
+        console.log(area.newCalculator());
+        let parentRec = new Rectangle(5, 3, "Blue");
+        console.log(`${parentRec.width}, ${parentRec.height}, ${parentRec.description}`);
+       
+    </script>
+</body>
+</html>
