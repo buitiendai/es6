@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Setter và Getter</title>
+</head>
+<body>
+    <script>
+        let obj = {
+            foo: 'This is the value of foo',
+            getFoo: function() {
+                return this.foo;
+            },
+            setFoo: function(val) {
+                this.foo = val;
+            }
+        }
+
+        console.log(obj.getFoo()); // This is the value of foo
+
+        obj.setFoo('hello');
+
+        console.log(obj.getFoo()); // hello
+
+
+        let newObj = {
+            newFoo: 'This is the new value of newFoo',
+            get fooz() {
+                return this.newFoo;
+            },
+            set fooz(newValue) {
+                this.newFoo = newValue;
+            }
+        }
+
+        //Getter
+        console.log(newObj.newFoo); // This is the value of foo
+
+        //Setter
+        newObj.newFoo = 'xin chào';
+
+        console.log(newObj.fooz); // xin chào
+    </script>
+</body>
+</html>

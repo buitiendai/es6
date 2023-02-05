@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sử dụng Getter và Setter</title>
+</head>
+<body>
+    <script>
+        class Person {
+            constructor (name, km) {
+                this.name = name;
+                this.km = km;
+            }
+            get getName() {
+                return this.name;
+            }
+
+            get getKm() {
+                return this.km;
+            }
+
+            set setName(nameValue) {
+                this.name = nameValue;
+            }
+
+            set setKm(kmValue) {
+                this.km = kmValue;
+            }
+
+            walk() {
+                return this.name + " đi được số km là " + this.km;
+            }
+        }
+
+        let newPerson = new Person('Linh', 10);
+        console.log(newPerson.getName);
+        console.log(newPerson.getKm);
+        console.log(newPerson.walk()); // Lưu ý: gọi hàm thì sẽ có gặp ngoặc đơn sau hàm được gọi.
+
+        newPerson.setName = 'Minh';
+        newPerson.setKm = 15;
+        console.log(newPerson.walk()); // Minh đi được số km là 15
+
+        class Programmer extends Person {
+            constructor(name, km, age, hour) {
+                super(name, km);
+                this.age = age;
+                this.hour = hour;
+            }
+            writeCode() {
+                return `Bạn ${this.name} ${this.age} tuổi, đi được ${this.km}km trong ${this.hour} giờ`;
+            }
+            
+            isTime() {
+                return super.walk() + ` trong ${this.hour} giờ`;
+            }
+        }
+        
+        let newProgrammer = new Programmer('Thủy Tiên', 8, 2, 4);
+        console.log(newProgrammer.writeCode());
+        console.log(newProgrammer.isTime());
+
+    </script>
+</body>
+</html>
